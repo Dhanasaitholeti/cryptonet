@@ -6,9 +6,9 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-slate-900">
       <Navbar />
-      <main className="flex-1 bg-red-300">{children}</main>
+      <main className="flex-1 overflow-y-scroll">{children}</main>
     </div>
   );
 };
