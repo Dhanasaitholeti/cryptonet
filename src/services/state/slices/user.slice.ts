@@ -18,7 +18,10 @@ export const userSlice = createSlice({
     updateUserData: (
       state: IinitialState,
       action: PayloadAction<IinitialState>
-    ) => {},
+    ) => {
+      state.users = action.payload.users;
+      state.error = action.payload.error;
+    },
   },
 });
 
