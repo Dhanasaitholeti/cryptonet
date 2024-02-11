@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { IUser } from "../libs/types/user.type";
 
 interface userCardProps {
@@ -5,8 +6,14 @@ interface userCardProps {
 }
 
 const UserCard: React.FC<userCardProps> = ({ user }) => {
+  const navigate = useNavigate();
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-md bg-slate-200 hover:bg-sky-600 m-4 p-2 flex group hover:cursor-pointer gap-0">
+    <div
+      onClick={() => {
+        navigate(`/${user.login.uuid}`);
+      }}
+      className="max-w-sm rounded-lg overflow-hidden shadow-md bg-slate-200 hover:bg-sky-600 m-4 p-2 flex group hover:cursor-pointer gap-0"
+    >
       <img
         className="w-1/3 rounded-full"
         src={user.picture.large}
