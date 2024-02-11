@@ -22,7 +22,7 @@ const HomeScreen = () => {
       {error ? (
         <Error />
       ) : users ? (
-        <div className="grid grid-cols-4 mx-auto justify-center items-center px-16 py-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mx-auto justify-center items-center sm:px-10 lg:px-16 2xl:px-16 py-4">
           {users.map((user: IUser) => (
             <UserCard user={user} key={user.login.uuid} />
           ))}
