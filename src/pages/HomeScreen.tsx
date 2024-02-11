@@ -11,17 +11,19 @@ const HomeScreen = () => {
   const { users, error } = useSelector((state: RootState) => state.userReducer);
 
   return (
-    <div className="grid grid-cols-4 mx-auto justify-center items-center px-16 py-4">
+    <>
       {error ? (
         <Error />
       ) : users ? (
-        users.map((user: IUser) => (
-          <UserCard user={user} key={user.login.uuid} />
-        ))
+        <div className="grid grid-cols-4 mx-auto justify-center items-center px-16 py-4">
+          {users.map((user: IUser) => (
+            <UserCard user={user} key={user.login.uuid} />
+          ))}
+        </div>
       ) : (
         <Loading />
       )}
-    </div>
+    </>
   );
 };
 

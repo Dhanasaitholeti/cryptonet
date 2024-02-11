@@ -19,7 +19,7 @@ const useUserData = (page: number = 1) => {
         const response = (await axios.get(
           `${fetchURL}?page=${page}&results=${numberOfItems}`
         )) as IFetchResponse;
-
+        // response.data.results
         dispatcher(
           updateUserData({ users: response.data.results, error: false })
         );
